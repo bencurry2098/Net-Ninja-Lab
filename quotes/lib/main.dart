@@ -11,6 +11,7 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
+    // Added category and createdAt to all quotes
     Quote(
       author: 'Oscar Wilde',
       text: 'Be yourself; everyone else is already taken',

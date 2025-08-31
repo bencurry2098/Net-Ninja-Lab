@@ -10,4 +10,5 @@ class Quote {
     this.category = 'General',
     DateTime? createdAt,
   }) : createdAt = createdAt ?? DateTime.now();
+  // List initializer to set createdAt to current date if not provided
 }
