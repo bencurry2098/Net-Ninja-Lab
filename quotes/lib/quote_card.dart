@@ -35,19 +35,20 @@ class QuoteCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 6.0),
-            // Category chip
-            Chip(label: Text(quote.category ?? 'General')),
-            SizedBox(height: 6.0),
-            // Creation date
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Text(
-                DateFormat('MMM d, yyyy').format(quote.createdAt),
-                style: TextStyle(color: Colors.grey[700]),
-              ),
+            // Row for category + date
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Chip(label: Text(quote.category ?? 'General')),
+                Text(
+                  DateFormat('MMM d, yyyy').format(quote.createdAt),
+                  style: TextStyle(color: Colors.grey[700]),
+                ),
+              ],
             ),
           ],
-        ),
+        )
+        ,
       ),
     );
   }

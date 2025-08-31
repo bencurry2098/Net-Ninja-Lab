@@ -39,7 +39,7 @@ class _QuoteListState extends State<QuoteList> {
       appBar: AppBar(
         title: Text('Awesome Quotes'),
         centerTitle: true,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
         children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
