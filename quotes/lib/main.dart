@@ -13,9 +13,9 @@ class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
     // Added category and createdAt to all quotes
     Quote(
-      author: 'Oscar Wilde',
-      text: 'Be yourself; everyone else is already taken',
-      category: 'Inspiration',
+      author: 'Ricky Bobby',
+      text: 'If you ain\'t first, you\'re last',
+      category: 'Motivation',
       createdAt: DateTime(2025, 1, 15),
     ),
     Quote(
@@ -37,7 +37,15 @@ class _QuoteListState extends State<QuoteList> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Awesome Quotes'),
+        title: Text(
+          'Awesome Quotes',
+          style: TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'serif',
+            letterSpacing: 1.5,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),

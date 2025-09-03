@@ -3,6 +3,7 @@ class Quote {
   final String author;
   final String category;
   final DateTime createdAt;
+  int likes = 0;
 
   Quote({
     required this.text,
