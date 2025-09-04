@@ -11,7 +11,6 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
-    // Added category and createdAt to all quotes
     Quote(
       author: 'Ricky Bobby',
       text: 'If you ain\'t first, you\'re last',
@@ -19,14 +18,14 @@ class _QuoteListState extends State<QuoteList> {
       createdAt: DateTime(2025, 1, 15),
     ),
     Quote(
-      author: 'Oscar Wilde',
-      text: 'I have nothing to declare except my genius',
-      category: 'Humor',
+      author: 'Albert Einstein',
+      text: 'The measure of intelligence is the ability to change.',
+      category: 'Science',
       createdAt: DateTime(2025, 1, 20),
     ),
     Quote(
-      author: 'Oscar Wilde',
-      text: 'The truth is rarely pure and never simple',
+      author: 'Albert Einstein',
+      text: 'In the middle of every difficulty lies opportunity',
       category: 'Philosophy',
       createdAt: DateTime(2025, 2, 2),
     ),
@@ -50,7 +49,18 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.blueAccent,
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map(
+              (quote) => QuoteCard(
+                quote: quote,
+                onDelete: () {
+                  setState(() {
+                    quotes.remove(quote);
+                  });
+                },
+              ),
+            )
+            .toList(),
       ),
     );
   }
