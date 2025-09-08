@@ -59,6 +59,7 @@ class _QuoteCardState extends State<QuoteCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
+                  // Quote text
                   child: Text(
                     widget.quote.text,
                     style: TextStyle(
@@ -73,15 +74,18 @@ class _QuoteCardState extends State<QuoteCard> {
                   onPressed: () async {
                     final confirm = await showDialog<bool>(
                       context: context,
+                      // Confirmation dialog
                       builder: (ctx) => AlertDialog(
                         title: Text('Delete Quote'),
                         content:
                             Text('Are you sure you want to delete this quote?'),
                         actions: [
+                          // Cancel button
                           TextButton(
                             onPressed: () => Navigator.of(ctx).pop(false),
                             child: Text('Cancel'),
                           ),
+                          // Delete button
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.red,
@@ -92,7 +96,7 @@ class _QuoteCardState extends State<QuoteCard> {
                         ],
                       ),
                     );
-
+                    // If user confirmed, call the onDelete callback
                     if (confirm == true) {
                       widget.onDelete();
                     }
